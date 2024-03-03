@@ -24,6 +24,5 @@ To run file web_app.py, you could run
 
 <code> streamlit run src/web_app.py </code>
 
-## Reference
 
 
