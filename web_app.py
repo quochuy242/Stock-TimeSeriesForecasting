@@ -5,13 +5,13 @@ import numpy as np
 import matplotlib.pyplot as plt
 import datetime
 import tensorflow as tf
+import os
 
 from sklearn.preprocessing import MinMaxScaler
-from keras.models import load_model
 
 
 def forecasting(x, y, scale):
-    model: tf.keras.Model = load_model("lstm_model.h5")
+    model = tf.keras.models.load_model("src\lstm_model")
     y_pred = model.predict(x=x)
     y_pred = y_pred / scale
 
@@ -41,6 +41,7 @@ def take_testing_data(df, train_rate: float = 0.7):
 
 def main():
     plt.style.use("ggplot")
+
     START = datetime.datetime(2015, 1, 1)
     END = datetime.datetime(2023, 12, 31)
 
